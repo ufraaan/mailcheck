@@ -1,4 +1,4 @@
-module github.com/ufraaan/email-check
+module github.com/ufraaan/mailcheck
 
 go 1.26.1
 

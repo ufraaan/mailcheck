@@ -1,5 +1,5 @@
 <div align="center">
-  <h2>email-check</h2>
+  <h2>mailcheck</h2>
   <img src="demo.gif" width="720">
 </div>
 
