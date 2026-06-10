@@ -18,3 +18,6 @@ Thumbs.db
 .vscode/
 *.swp
 *.swo
+
+# VHS tape (recording source)
+demo.tape
