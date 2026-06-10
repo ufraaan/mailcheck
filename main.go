@@ -10,9 +10,16 @@ import (
 )
 
 func main() {
-	scanner := bufio.NewScanner(os.Stdin)
 	fmt.Printf("domain, hasMX, hasSPF, spfRecord, hasDMARC, dmarcRecord\n")
 
+	if len(os.Args) > 1 {
+		for _, d := range os.Args[1:] {
+			checkDomain(d)
+		}
+		return
+	}
+
+	scanner := bufio.NewScanner(os.Stdin)
 	for scanner.Scan() {
 		checkDomain(scanner.Text())
 	}
@@ -53,7 +60,7 @@ func checkDomain(domain string) {
 	}
 
 	for _, record := range dmarcRecords {
-			if strings.HasPrefix(record, "v=DMARC1") {
+		if strings.HasPrefix(record, "v=DMARC1") {
 			hasDMARC = true
 			dmarcRecord = record
 			break
